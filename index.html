@@ -15,22 +15,24 @@
 <title>Ejercicios_14 - Angular JS</title>
 </head>
 <body>
-    <!-- Se inicia una sección con la directiva ng-app y el nombre de la aplicación Angular "facturaApp" -->
+    <!-- Se inicia una sección con la directiva ng-app y el nombre de la aplicación Angular "salarioApp" -->
     <section ng-app="salariobApp">
-        <!-- Se inicia un controlador de vista con la directiva ng-controller y el nombre del controlador "facturaCtrl" -->
+        <!-- Se inicia un controlador de vista con la directiva ng-controller y el nombre del controlador "salarioCtrl" -->
         <main ng-controller="salariobCtrl">
             <!-- Título de la factura -->
             <h1>Calcular Salario</h1>
-            <!-- Input para ingresar la distancia recorrida -->
-            <p>Ingrese su Salario: <input type="number" ng-model="basicSalary"></p>
-            <!-- Muestra el importe a pagar utilizando el filtro "currency" para formatear como moneda -->
+            <!-- Input para ingresar los datos del empleado -->
+            <p>Ingrese su Codigo de Empleado: <input type="text" ng-model="code"></p>
+            <p>Ingrese su Horas Trabajadas: <input type="text" ng-model="hours"></p>
+            <p>Ingrese su Tarifa por Hora: <input type="text" ng-model="rate"></p>
+            <!-- Muestra el salario a pagar utilizando el filtro "currency" para formatear como moneda -->
             <p>Salario: {{ calculateSalary() | currency }}</p>
             <!-- Muestra el descuento utilizando el filtro "currency" para formatear como moneda -->
-            <p>Descuento: {{ calculaDiscount | currency }}</p>
-            <!-- Muestra el total a pagar utilizando el filtro "currency" para formatear como moneda -->
-            <p>Salario neto: {{ calculaSalarynet | currency }}</p>
+            <p>Descuento: {{ calculaDiscount() | currency }}</p>
+            <!-- Muestra el salario neto utilizando el filtro "currency" para formatear como moneda -->
+            <p>Salario neto: {{ calculaSalarynet() | currency }}</p>
         </main>
     </section>   
 </body>
 </html>
-<script src="js/ejercicios_13.js"></script>
+<script src="js/ejercicio_14.js"></script>
